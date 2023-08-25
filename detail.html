@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>再一盒山積-商品詳情頁</title>
+
+    <link href="assets/css/tailwind.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+<style>
+  .thumbs-swiper .swiper-slide.swiper-slide-thumb-active {
+    border: 2px solid #ff4500;
+  }
+</style>
+
+  </head>
+  <body id="app">
+<header>
+  <div class="py-2 text-sm text-white bg-model-gray-800 min-h-[30px]">
+    <ul class="flex justify-end me-8" v-show="signin ?? true">
+      <li class="me-8"><a href="#" class="ps-auto">成為賣家</a></li>
+      <li>
+        <a href="#" class="ps-auto"
+          >繁體中文
+          <img src="assets/images/arrow-down.svg" class="inline-block ms-1"
+        /></a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex px-10 py-3 bg-model-blue">
+    <div class="flex items-start justify-center flex-1">
+      <a href="index.html"
+        ><img src="assets/images/logo.png" class="h-[29.18px] me-3 mt-1"
+      /></a>
+
+      <div>
+        <div class="relative flex items-center">
+          <input
+            type="text"
+            placeholder="搜尋 再一盒山積"
+            class="relative w-[680px] pl-4 pr-20 transition-all duration-200 ease-in-out bg-white rounded-md outline-none h-9 peer drop-shadow-sm focus:bg-white focus:drop-shadow-lg"
+          />
+          <button
+            class="absolute w-16 text-xs font-semibold text-white transition-all duration-200 ease-in-out rounded-md bg-model-orange right-2 h-7 group-focus-within:bg-blue-400 group-focus-within:hover:bg-blue-600"
+          >
+            <img src="assets/images/search.svg" class="m-auto" />
+          </button>
+        </div>
+        <a href="#" class="text-xs text-white me-1">鋼彈</a>
+        <a href="#" class="text-xs text-white me-1">手辦</a>
+        <a href="#" class="text-xs text-white me-1">鬼滅之刃</a>
+        <a href="#" class="text-xs text-white me-1">咒術迴戰</a>
+        <a href="#" class="text-xs text-white me-1">黏土人</a>
+        <a href="#" class="text-xs text-white me-1">哥吉拉</a>
+        <a href="#" class="text-xs text-white me-1">萬代</a>
+        <a href="#" class="text-xs text-white me-1">七龍珠</a>
+        <a href="#" class="text-xs text-white me-1">獵人</a>
+        <a href="#" class="text-xs text-white me-1">星際大戰</a>
+        <a href="#" class="text-xs text-white me-1">海賊王</a>
+        <a href="#" class="text-xs text-white me-1">寶可夢</a>
+        <a href="#" class="text-xs text-white me-1">新世紀福音戰士</a>
+        <a href="#" class="text-xs text-white me-1">漫威</a>
+      </div>
+    </div>
+    <div class="flex items-center" v-show="signin ?? true">
+      <a
+        href="singin.html"
+        class="px-2 text-sm leading-8 text-white border border-white rounded-md h-9 me-5"
+      >
+        登入/註冊
+      </a>
+      <a
+        href="#"
+        class="rounded-full w-[40px] h-[40px] bg-model-gray-700 relative me-2"
+      >
+        <img
+          src="assets/images/bell.svg"
+          class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+        />
+      </a>
+      <a
+        href="#"
+        class="rounded-full w-[40px] h-[40px] bg-model-gray-700 relative"
+      >
+        <img
+          src="assets/images/shopping-cart.png"
+          width="20"
+          height="20"
+          class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+        />
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<div class="flex justify-center py-24">
+  <div class="flex flex-col me-20">
+    <div class="flex me-8">
+      <div class="w-[464px] mr-6">
+        <div
+          style="--swiper-navigation-color: #fff"
+          class="swiper mySwiper2 max-h-[463px]"
+        >
+          <div class="swiper-wrapper">
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/FM 1_100 風靈鋼彈 水星的魔女 FULL MECHANICS Aerial.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103272084.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103272336.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103272559.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103272870.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103273050.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103273241.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103273518.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103273843.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103274131.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103274367.jpg"
+              />
+            </div>
+            <div class="swiper-slide w-[463px] h-[463px]">
+              <img
+                class="object-contain object-center w-full h-full max-h-[463px]"
+                src="assets/images/demo/details/thumbs/168103274680.jpg"
+              />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <div class="mt-4 mb-4 swiper thumbs-swiper">
+          <div class="swiper-wrapper max-w-[463px] flex-wrap mb-1">
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/FM 1_100 風靈鋼彈 水星的魔女 FULL MECHANICS Aerial.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103272084.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103272336.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103272559.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103272870.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103273050.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103273241.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103273518.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103273843.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103274131.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103274367.jpg"
+              />
+            </div>
+            <div class="swiper-slide h-[48px] max-w-[48px]">
+              <img
+                class="object-contain object-center h-full max-h-[48px] w-[48px]"
+                src="assets/images/demo/details/thumbs/168103274680.jpg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-[400px]">
+        <h1 class="text-[26px] font-bold mb-4">
+          Bandai Hobby MG 00 鋼彈七劍/G 鋼彈 0 英吋
+        </h1>
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[26px] font-bold text-model-orange">NT$880</span>
+          <a href="#"><i class="fa-regular fa-heart text-[20px]"></i></a>
+        </div>
+        <div class="mb-4">
+          <div class="mb-2 text-sm">數量</div>
+          <div>
+            <select
+              class="text-sm leading-5 border border-model-gray-400 rounded-md w-[108px] bg-white py-1 mr-2"
+              value="1"
+            >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+            <span class="text-sm"
+              >剩最後<span class="px-2 text-model-orange">2</span>件</span
+            >
+          </div>
+        </div>
+        <div class="mb-4">
+          <button
+            class="w-full py-2.5 mb-2 text-sm leading-5 text-white transition-all duration-200 ease-in-out rounded-md bg-model-orange"
+          >
+            <i class="fa-solid fa-cart-shopping me-2"></i>放入購物車
+          </button>
+          <button
+            class="w-full py-2.5 text-sm leading-5 transition-all duration-200 ease-in-out bg-white border rounded-md text-model-orange border-model-orange me-2"
+          >
+            立即購買
+          </button>
+        </div>
+        <div class="mb-5">
+          <ul class="pl-3 text-sm leading-7 list-disc text-model-gray-600">
+            <li>付款後，從備貨到寄出商品為 1 個工作天（不包含假日）</li>
+            <li>多重優惠顯示，實際優惠折抵以購物車內的折抵金額為準</li>
+          </ul>
+        </div>
+        <div>
+          <common-title title="運費與資訊"></common-title>
+          <span class="block mb-4 text-sm text-model-gray-600">商品運費</span>
+          <table class="w-full mb-4">
+            <thead>
+              <tr class="text-sm font-bold">
+                <th class="pe-2 text-start">運送方式</th>
+                <th class="pe-2 text-start">運費</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-sm border-b border-b-model-gray">
+                <td class="py-6 pe-2">
+                  7-11取貨<br />通知出貨後約 1- 3 天寄達 提供追蹤
+                </td>
+                <td class="py-6 pe-2">NT$ 80-120</td>
+              </tr>
+              <tr class="text-sm border-b border-b-model-gray">
+                <td class="py-6 pe-2">
+                  7-11取貨付款<br />通知出貨後約 1- 3 天寄達 提供追蹤
+                </td>
+                <td class="py-6 pe-2">NT$ 80-120</td>
+              </tr>
+              <tr class="text-sm border-b border-b-model-gray">
+                <td class="py-6 pe-2">
+                  中華郵政<br />通知出貨後約 1- 3 天寄達 提供追蹤
+                </td>
+                <td class="py-6 pe-2">NT$ 80</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-sm">
+            <p class="font-bold underline">看全部</p>
+            <p>實際運費金額以購物車結算或是到貨時收取的金額為準。</p>
+          </div>
+          <div class="my-6 border-b border-b-model-gray-500"></div>
+          <div>
+            <span class="block mb-4 text-sm text-model-gray-600">付款方式</span>
+            <ul class="pl-3 text-sm leading-7 uppercase list-disc">
+              <li>信用卡安全加密付款</li>
+              <li>轉帳付款</li>
+              <li>7-11 ibon 代碼繳費</li>
+              <li>全家 FamiPort 代碼繳費</li>
+              <li>LINE Pay</li>
+              <li>Alipay 支付寶</li>
+              <li>AlipayHK 支付寶香港</li>
+              <li>悠遊付</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <common-title title="您可能會喜歡的精選商品"> </common-title>
+        <div
+          class="py-4 swiper featuredProductsSwiper w-[895px]"
+          style="
+            --swiper-navigation-size: 12px;
+            --swiper-navigation-color: #000;
+          "
+        >
+          <div class="py-2 swiper-wrapper">
+            <div
+              class="swiper-slide max-w-[145px]"
+              v-for="product in featuredProducts"
+            >
+              <a href="detail.html" class="block shadow-md shadow-black-500/50">
+                <div
+                  class="max-h-[143px] h-[143px] w-[143px] max-w-[143px]: bg-cover bg-no-repeat bg-center"
+                  :style="{'background-image': `url('${product.productImage}')`}"
+                ></div>
+                <div class="flex flex-col px-2">
+                  <div class="text-sm line-clamp-2">
+                    {{product.productName}}
+                  </div>
+                  <div class="text-sm text-model-gray-300">
+                    {{product.trade}}
+                  </div>
+                  <div class="text-base font-bold text-model-orange-500">
+                    ${{product.productSellingPrice}}
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-full swiper-button-next !w-[42px] !h-[42px] shadow-md shadow-black-500/20 bg-opacity-75"
+          ></div>
+          <div
+            class="bg-white rounded-full swiper-button-prev !w-[42px] !h-[42px] shadow-md shadow-black-500/20 bg-opacity-75"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-[229px] me-20">
+    <div class="mb-8">
+      <common-title title="商品價格">
+        <template #title-end>
+          <i class="fa-solid fa-filter text-model-gray-500"></i>
+        </template>
+      </common-title>
+      <div>
+        <ul class="pl-8 text-sm list-decimal">
+          <li class="py-2" v-for="({price,city},index) in prices" :key="index">
+            <span class="px-3 text-model-orange">${{price}}</span>
+            <span class="px-3 text-model-gray-600">{{city}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <common-title title="相關商品"> </common-title>
+      <a
+        v-for="product in relatedProducts"
+        href="detail.html"
+        class="max-h-[360px] h-[360px] w-[220px] shadow-md shadow-black-500/50 my-4 block"
+      >
+        <div
+          class="max-h-[220px] h-[220px] w-[220px] max-w-[220px]: bg-cover bg-no-repeat bg-center"
+          :style="{'background-image': `url('${product.productImage}')`}"
+        ></div>
+        <div class="flex flex-col px-2">
+          <div class="text-sm line-clamp-2 h-[39px] my-2">
+            {{product.productName}}
+          </div>
+          <div class="text-base text-model-gray-300 h-[19px] my-2">
+            {{product.trade}}
+          </div>
+          <div class="text-xl text-model-orange-500 h-[24px] my-2 font-bold">
+            ${{product.productSellingPrice}}
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="">
+  <div class="py-4 bg-model-gray-800 mt-7">
+    <div class="max-w-[1070px] mx-auto min-w-[960px]">
+      <div class="flex justify-between">
+        <div class="flex">
+          <div class="mr-14">
+            <a href="index.html"><img src="assets/images/logo.png" /></a>
+          </div>
+          <div class="text-sm leading-7 text-white mr-14">
+            <h5 class="font-bold">幫助</h5>
+            <ul>
+              <li><a href="#">問與答</a></li>
+              <li><a href="#">訊息公告</a></li>
+              <li><a href="#">聯絡客服</a></li>
+            </ul>
+          </div>
+          <div class="text-sm leading-7 text-white mr-14">
+            <h5 class="font-bold">政策</h5>
+            <ul>
+              <li><a href="#">大宗採購</a></li>
+              <li><a href="#">服務條款</a></li>
+              <li><a href="#">退貨政策</a></li>
+              <li><a href="#">會員制度</a></li>
+            </ul>
+          </div>
+          <div class="text-sm leading-7 text-white mr-14">
+            <h5 class="font-bold">關於我們</h5>
+            <ul>
+              <li><a href="#">媒體報導</a></li>
+              <li><a href="#">人才招募</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-white">
+          <h5 class="pb-2">追蹤我們</h5>
+          <ul class="flex">
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+              >
+                <img
+                  src="assets/images/social/fb.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+                />
+              </a>
+            </li>
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+              >
+                <img
+                  src="assets/images/social/tw.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+                />
+              </a>
+            </li>
+
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+                ><img
+                  src="assets/images/social/yt.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+              /></a>
+            </li>
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+                ><img
+                  src="assets/images/social/ig.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-3 pb-1 text-sm text-center text-white bg-model-blue">
+    Copyright ©2023. All Rights Reserved.
+  </div>
+</footer>
+
+  </body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script type="module">
+  const { createApp, ref, onMounted, nextTick } = Vue;
+  import commonTitle from "./assets/js/commonTitle.js";
+  createApp({
+    setup() {
+      const prices = ref([
+        { price: 860, city: "台北市" },
+        { price: 860, city: "新北市" },
+        { price: 880, city: "彰化縣" },
+        { price: 880, city: "台北市" },
+        { price: 890, city: "台中市" },
+        { price: 890, city: "新竹市" },
+        { price: 900, city: "台南市" },
+        { price: 915, city: "高雄市" },
+        { price: 920, city: "花蓮縣" },
+        { price: 920, city: "桃園市" },
+      ]);
+      onMounted(() => {
+        var swiper = new Swiper(".thumbs-swiper", {
+          spaceBetween: 12,
+          slidesPerView: "auto",
+          loop: false,
+        });
+        // swiper.destroy(true, true);
+        var swiper2 = new Swiper(".mySwiper2", {
+          spaceBetween: 10,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          thumbs: { swiper: swiper },
+        });
+
+        nextTick(() => {
+          var swiper3 = new Swiper(".featuredProductsSwiper", {
+            slidesPerView: 6,
+            spaceBetween: 10,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        });
+      });
+
+      const relatedProducts = ref([
+        {
+          productImage:
+            "assets/images/demo/details/related/1_144 HG 風靈鋼彈 修改型 機動戰士鋼彈 水星的魔女.jpg",
+          productName: "1_144 HG 風靈鋼彈 修改型 機動戰士鋼彈 水星的魔女",
+          productSellingPrice: "410",
+          trade: "HG風靈修改型",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/related/水星的魔女 26 HG 1_144 異靈鋼彈 Calibarn (原 新商品B).jpg 的副本.jpg",
+          productName: "水星的魔女 26 HG 1_144 異靈鋼彈 Calibarn (原 新商品B)",
+          productSellingPrice: "490",
+          trade: "HG異靈",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/related/HG 1_144 機動戰士鋼彈 水星的魔女 戰騎鋼彈.jpg 的副本.jpg",
+          productName: "HG 1_144 機動戰士鋼彈 水星的魔女 戰騎鋼彈",
+          productSellingPrice: "490",
+          trade: "HG戰騎",
+        },
+      ]);
+
+      const featuredProducts = ref([
+        {
+          productImage:
+            "assets/images/demo/details/featured/水星的魔女 08 HG 1_144 達里巴爾迪 DARILBALDE.jpg",
+          productName: "水星的魔女 08 HG 1_144 達里巴爾迪 DARILBALDE",
+          productSellingPrice: "440",
+          trade: "HG達里巴爾迪",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/featured/HG IBO 001 1_144 獵魔鋼彈.jpg",
+          productName: "HG IBO 001 1_144 獵魔鋼彈",
+          productSellingPrice: "250",
+          trade: "HG獵魔",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/featured/水星的魔女 07 HG 1_144 鐵騎鋼彈 Pharact.jpg",
+          productName: "水星的魔女 07 HG 1_144 鐵騎鋼彈 Pharact",
+          productSellingPrice: "440",
+          trade: "HG鐵騎",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/featured/水星的魔女 01 HG 1_144 魔靈鋼彈 GUNDAM LFRITH 組裝模型 HG.jpg",
+          productName:
+            "水星的魔女 01 HG 1_144 魔靈鋼彈 GUNDAM LFRITH 組裝模型 HG",
+          productSellingPrice: "370",
+          trade: "HG魔靈",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/featured/MG 1_100 獨角獸鋼彈 3號機 鳳凰 RX-0-3 機動戰士鋼彈UC 組裝模型.jpg 的副本.jpg",
+          productName:
+            "MG 1_100 獨角獸鋼彈 3號機 鳳凰 RX-0-3 機動戰士鋼彈UC 組裝模型",
+          productSellingPrice: "3280",
+          trade: "MG獨角獸",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/featured/MGEX 1_100 鋼彈Seed 攻擊自由鋼彈.jpg 的副本.jpg",
+          productName: "MGEX 1_100 鋼彈Seed 攻擊自由鋼彈",
+          productSellingPrice: "4200",
+          trade: "MGEX攻擊自由",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/featured/MASTER GRADE SD 自由鋼彈.jpg 的副本.jpg",
+          productName: "MASTER GRADE SD 自由鋼彈",
+          productSellingPrice: "910",
+          trade: "MGSD自由",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/featured/PG版 1_60 RX-78-2 GUNDAM UNLEASHED 鋼彈 初鋼.jpg 的副本.png",
+          productName: "PG版 1_60 RX-78-2 GUNDAM UNLEASHED 鋼彈 初鋼",
+          productSellingPrice: "6800",
+          trade: "PGU初鋼",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/featured/RG 1_144 新機動戰記鋼彈W 次代鋼彈.jpg 的副本.jpg",
+          productName: "RG 1_144 新機動戰記鋼彈W 次代鋼彈",
+          productSellingPrice: "1050",
+          trade: "RG次代",
+        },
+        {
+          productImage:
+            "assets/images/demo/details/featured/RG 勇者王 我王凱牙 GaoGaiGar.jpg 的副本.jpg",
+          productName: "RG 勇者王 我王凱牙 GaoGaiGar.jpg",
+          productSellingPrice: "1400",
+          trade: "RG勇者王",
+        },
+      ]);
+      return { prices, relatedProducts, featuredProducts };
+    },
+  })
+    .component("common-title", commonTitle)
+    .mount("#app");
+</script>
+
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>再一盒山積-登入</title>
+
+    <link href="assets/css/tailwind.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+
+
+  </head>
+  <body id="app">
+<header>
+  <div class="py-2 text-sm text-white bg-model-gray-800 min-h-[30px]">
+    <ul class="flex justify-end me-8" v-show="signin ?? true">
+      <li class="me-8"><a href="#" class="ps-auto">成為賣家</a></li>
+      <li>
+        <a href="#" class="ps-auto"
+          >繁體中文
+          <img src="assets/images/arrow-down.svg" class="inline-block ms-1"
+        /></a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex px-10 py-3 bg-model-blue">
+    <div class="flex items-start justify-center flex-1">
+      <a href="index.html"
+        ><img src="assets/images/logo.png" class="h-[29.18px] me-3 mt-1"
+      /></a>
+
+      <div>
+        <div class="relative flex items-center">
+          <input
+            type="text"
+            placeholder="搜尋 再一盒山積"
+            class="relative w-[680px] pl-4 pr-20 transition-all duration-200 ease-in-out bg-white rounded-md outline-none h-9 peer drop-shadow-sm focus:bg-white focus:drop-shadow-lg"
+          />
+          <button
+            class="absolute w-16 text-xs font-semibold text-white transition-all duration-200 ease-in-out rounded-md bg-model-orange right-2 h-7 group-focus-within:bg-blue-400 group-focus-within:hover:bg-blue-600"
+          >
+            <img src="assets/images/search.svg" class="m-auto" />
+          </button>
+        </div>
+        <a href="#" class="text-xs text-white me-1">鋼彈</a>
+        <a href="#" class="text-xs text-white me-1">手辦</a>
+        <a href="#" class="text-xs text-white me-1">鬼滅之刃</a>
+        <a href="#" class="text-xs text-white me-1">咒術迴戰</a>
+        <a href="#" class="text-xs text-white me-1">黏土人</a>
+        <a href="#" class="text-xs text-white me-1">哥吉拉</a>
+        <a href="#" class="text-xs text-white me-1">萬代</a>
+        <a href="#" class="text-xs text-white me-1">七龍珠</a>
+        <a href="#" class="text-xs text-white me-1">獵人</a>
+        <a href="#" class="text-xs text-white me-1">星際大戰</a>
+        <a href="#" class="text-xs text-white me-1">海賊王</a>
+        <a href="#" class="text-xs text-white me-1">寶可夢</a>
+        <a href="#" class="text-xs text-white me-1">新世紀福音戰士</a>
+        <a href="#" class="text-xs text-white me-1">漫威</a>
+      </div>
+    </div>
+    <div class="flex items-center" v-show="signin ?? true">
+      <a
+        href="singin.html"
+        class="px-2 text-sm leading-8 text-white border border-white rounded-md h-9 me-5"
+      >
+        登入/註冊
+      </a>
+      <a
+        href="#"
+        class="rounded-full w-[40px] h-[40px] bg-model-gray-700 relative me-2"
+      >
+        <img
+          src="assets/images/bell.svg"
+          class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+        />
+      </a>
+      <a
+        href="#"
+        class="rounded-full w-[40px] h-[40px] bg-model-gray-700 relative"
+      >
+        <img
+          src="assets/images/shopping-cart.png"
+          width="20"
+          height="20"
+          class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+        />
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<div class="py-14 bg-[#F1F2F2] -mb-7 flex justify-center">
+  <div
+    class="px-8 py-8 bg-white w-[459px] rounded-lg border border-[#E2E2E2] me-8"
+  >
+    <div class="flex items-end justify-between mb-8">
+      <h2 class="text-2xl font-bold text-model-orange">個人登入</h2>
+      <div class="">
+        <span class="text-base text-model-gray-600">新用戶？</span>
+        <a
+          href="#"
+          class="text-base underline underline-offset-2 text-model-orange"
+          >註冊</a
+        >
+      </div>
+    </div>
+    <div class="relative flex items-center mb-4">
+      <input
+        type="text"
+        placeholder="帳號：電子信箱"
+        class="relative w-full px-4 text-sm transition-all duration-200 ease-in-out rounded-md outline-none border-model-gray-200 h-9 peer drop-shadow-sm focus:bg-white focus:drop-shadow-lg placeholder:text-model-gray-300"
+      />
+    </div>
+    <div class="relative flex items-center mb-4">
+      <input
+        :type="passwordType"
+        placeholder="密碼：6個字元以上必須含有英文與數字"
+        class="relative w-full pl-4 pr-8 text-sm transition-all duration-200 ease-in-out rounded-md outline-none border-model-gray-200 h-9 peer drop-shadow-sm focus:bg-white focus:drop-shadow-lg placeholder:text-model-gray-300"
+      />
+      <a
+        href="#"
+        class="absolute cursor-pointer right-2"
+        @click.prevent="()=>{passwordType= passwordType === 'text'?'password':'text'}"
+      >
+        <i
+          class="text-model-gray-300"
+          :class="{
+            'fa-regular fa-eye':passwordType === 'text',
+            'fa-regular fa-eye-slash':passwordType === 'password',
+        }"
+        ></i>
+      </a>
+    </div>
+    <div class="mb-8 text-end">
+      <a href="#" class="text-xs font-bold text-model-orange-500">忘記密碼？</a>
+    </div>
+    <div class="flex mb-6">
+      <a
+        href="#"
+        class="border rounded-md border-model-gray-200 w-[192px] text-sm text-center text-model-gray-600 py-1 me-2"
+      >
+        <img src="assets/images/signin/google.svg" class="inline-block me-1" />
+        Google登入</a
+      >
+      <a
+        href="#"
+        class="border rounded-md border-model-gray-200 w-[192px] text-sm text-center text-model-gray-600 py-1"
+      >
+        <img src="assets/images/signin/fb.svg" class="inline-block me-1" />
+        Facebook登入</a
+      >
+    </div>
+    <img src="assets/images/demo/signin/re-captcha.svg" class="m-auto mb-4" />
+    <button
+      type="button"
+      @click="toIndex"
+      class="w-full text-base font-medium text-white transition-all duration-200 ease-in-out rounded-md h-9 bg-model-orange group-focus-within:bg-blue-400 group-focus-within:hover:bg-blue-600"
+    >
+      登入
+    </button>
+  </div>
+  <div class="px-8 py-8 bg-white w-[459px] rounded-lg border border-[#E2E2E2]">
+    <div class="flex items-end justify-between mb-8">
+      <h2 class="text-2xl font-bold text-model-blue">商家登入</h2>
+      <div class="">
+        <span class="text-base text-model-gray-600">新用戶？</span>
+        <a
+          href="#"
+          class="text-base underline underline-offset-2 text-model-blue"
+          >註冊</a
+        >
+      </div>
+    </div>
+    <div class="relative flex items-center mb-4">
+      <input
+        type="text"
+        placeholder="帳號：電子信箱"
+        class="relative w-full px-4 text-sm transition-all duration-200 ease-in-out rounded-md outline-none border-model-gray-200 h-9 peer drop-shadow-sm focus:bg-white focus:drop-shadow-lg placeholder:text-model-gray-300"
+      />
+    </div>
+    <div class="relative flex items-center mb-4">
+      <input
+        :type="passwordType"
+        placeholder="密碼：6個字元以上必須含有英文與數字"
+        class="relative w-full pl-4 pr-8 text-sm transition-all duration-200 ease-in-out rounded-md outline-none border-model-gray-200 h-9 peer drop-shadow-sm focus:bg-white focus:drop-shadow-lg placeholder:text-model-gray-300"
+      />
+      <a
+        href="#"
+        class="absolute cursor-pointer right-2"
+        @click.prevent="()=>{passwordType= passwordType === 'text'?'password':'text'}"
+      >
+        <i
+          class="text-model-gray-300"
+          :class="{
+            'fa-regular fa-eye':passwordType === 'text',
+            'fa-regular fa-eye-slash':passwordType === 'password',
+        }"
+        ></i>
+      </a>
+    </div>
+    <div class="mb-8 text-end">
+      <a href="#" class="text-xs font-bold text-model-blue">忘記密碼？</a>
+    </div>
+    <div class="flex mb-6">
+      <a
+        href="#"
+        class="border rounded-md border-model-gray-200 w-[192px] text-sm text-center text-model-gray-600 py-1 me-2"
+      >
+        <img src="assets/images/signin/google.svg" class="inline-block me-1" />
+        Google登入</a
+      >
+      <a
+        href="#"
+        class="border rounded-md border-model-gray-200 w-[192px] text-sm text-center text-model-gray-600 py-1"
+      >
+        <img src="assets/images/signin/fb.svg" class="inline-block me-1" />
+        Facebook登入</a
+      >
+    </div>
+    <img src="assets/images/demo/signin/re-captcha.svg" class="m-auto mb-4" />
+    <button
+      @click="toIndex"
+      class="w-full text-base font-medium text-white transition-all duration-200 ease-in-out rounded-md h-9 bg-model-blue group-focus-within:bg-blue-400 group-focus-within:hover:bg-blue-600"
+    >
+      商家登入
+    </button>
+  </div>
+</div>
+
+<footer class="">
+  <div class="py-4 bg-model-gray-800 mt-7">
+    <div class="max-w-[1070px] mx-auto min-w-[960px]">
+      <div class="flex justify-between">
+        <div class="flex">
+          <div class="mr-14">
+            <a href="index.html"><img src="assets/images/logo.png" /></a>
+          </div>
+          <div class="text-sm leading-7 text-white mr-14">
+            <h5 class="font-bold">幫助</h5>
+            <ul>
+              <li><a href="#">問與答</a></li>
+              <li><a href="#">訊息公告</a></li>
+              <li><a href="#">聯絡客服</a></li>
+            </ul>
+          </div>
+          <div class="text-sm leading-7 text-white mr-14">
+            <h5 class="font-bold">政策</h5>
+            <ul>
+              <li><a href="#">大宗採購</a></li>
+              <li><a href="#">服務條款</a></li>
+              <li><a href="#">退貨政策</a></li>
+              <li><a href="#">會員制度</a></li>
+            </ul>
+          </div>
+          <div class="text-sm leading-7 text-white mr-14">
+            <h5 class="font-bold">關於我們</h5>
+            <ul>
+              <li><a href="#">媒體報導</a></li>
+              <li><a href="#">人才招募</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-white">
+          <h5 class="pb-2">追蹤我們</h5>
+          <ul class="flex">
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+              >
+                <img
+                  src="assets/images/social/fb.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+                />
+              </a>
+            </li>
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+              >
+                <img
+                  src="assets/images/social/tw.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+                />
+              </a>
+            </li>
+
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+                ><img
+                  src="assets/images/social/yt.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+              /></a>
+            </li>
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+                ><img
+                  src="assets/images/social/ig.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-3 pb-1 text-sm text-center text-white bg-model-blue">
+    Copyright ©2023. All Rights Reserved.
+  </div>
+</footer>
+
+  </body>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script type="module">
+  const { createApp, ref, onMounted } = Vue;
+
+  createApp({
+    setup() {
+      const signin = ref(false);
+      const passwordType = ref("password");
+      const toIndex = () => (window.location.href = "index.html");
+      return {
+        signin,
+        passwordType,
+        toIndex,
+      };
+    },
+  }).mount("#app");
+</script>
+
+</html>

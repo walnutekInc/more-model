@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>再一盒山積-首頁</title>
+
+    <link href="assets/css/tailwind.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+<style>
+  .swiper [class^="swiper-button-"]::after {
+    font-size: 10px;
+    color: black;
+  }
+</style>
+
+  </head>
+  <body id="app">
+<header>
+  <div class="py-2 text-sm text-white bg-model-gray-800 min-h-[30px]">
+    <ul class="flex justify-end me-8" v-show="signin ?? true">
+      <li class="me-8"><a href="#" class="ps-auto">成為賣家</a></li>
+      <li>
+        <a href="#" class="ps-auto"
+          >繁體中文
+          <img src="assets/images/arrow-down.svg" class="inline-block ms-1"
+        /></a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex px-10 py-3 bg-model-blue">
+    <div class="flex items-start justify-center flex-1">
+      <a href="index.html"
+        ><img src="assets/images/logo.png" class="h-[29.18px] me-3 mt-1"
+      /></a>
+
+      <div>
+        <div class="relative flex items-center">
+          <input
+            type="text"
+            placeholder="搜尋 再一盒山積"
+            class="relative w-[680px] pl-4 pr-20 transition-all duration-200 ease-in-out bg-white rounded-md outline-none h-9 peer drop-shadow-sm focus:bg-white focus:drop-shadow-lg"
+          />
+          <button
+            class="absolute w-16 text-xs font-semibold text-white transition-all duration-200 ease-in-out rounded-md bg-model-orange right-2 h-7 group-focus-within:bg-blue-400 group-focus-within:hover:bg-blue-600"
+          >
+            <img src="assets/images/search.svg" class="m-auto" />
+          </button>
+        </div>
+        <a href="#" class="text-xs text-white me-1">鋼彈</a>
+        <a href="#" class="text-xs text-white me-1">手辦</a>
+        <a href="#" class="text-xs text-white me-1">鬼滅之刃</a>
+        <a href="#" class="text-xs text-white me-1">咒術迴戰</a>
+        <a href="#" class="text-xs text-white me-1">黏土人</a>
+        <a href="#" class="text-xs text-white me-1">哥吉拉</a>
+        <a href="#" class="text-xs text-white me-1">萬代</a>
+        <a href="#" class="text-xs text-white me-1">七龍珠</a>
+        <a href="#" class="text-xs text-white me-1">獵人</a>
+        <a href="#" class="text-xs text-white me-1">星際大戰</a>
+        <a href="#" class="text-xs text-white me-1">海賊王</a>
+        <a href="#" class="text-xs text-white me-1">寶可夢</a>
+        <a href="#" class="text-xs text-white me-1">新世紀福音戰士</a>
+        <a href="#" class="text-xs text-white me-1">漫威</a>
+      </div>
+    </div>
+    <div class="flex items-center" v-show="signin ?? true">
+      <a
+        href="singin.html"
+        class="px-2 text-sm leading-8 text-white border border-white rounded-md h-9 me-5"
+      >
+        登入/註冊
+      </a>
+      <a
+        href="#"
+        class="rounded-full w-[40px] h-[40px] bg-model-gray-700 relative me-2"
+      >
+        <img
+          src="assets/images/bell.svg"
+          class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+        />
+      </a>
+      <a
+        href="#"
+        class="rounded-full w-[40px] h-[40px] bg-model-gray-700 relative"
+      >
+        <img
+          src="assets/images/shopping-cart.png"
+          width="20"
+          height="20"
+          class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+        />
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<div class="">
+  <!-- Slider main container -->
+  <div class="my-4 swiper max-h-[325px]">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img
+          src="assets/images/banner/MGEX 獨角獸.jpg"
+          class="block object-contain w-full h-full"
+          alt="MGEX 獨角獸"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="assets/images/banner/夜鶯 RE.jpg"
+          class="block object-contain w-full h-full"
+          alt="夜鶯 RE"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="assets/images/banner/海牛.jpg"
+          class="block object-contain w-full h-full"
+          alt="海牛"
+        />
+      </div>
+    </div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <div class="flex justify-around m-auto mt-20 max-w-7xl">
+    <div class="w-[219px] mr-10">
+      <section class="">
+        <h4
+          class="pl-2 mb-6 text-base font-bold border-l-4 text-appgray-700 border-model-orange"
+        >
+          品牌
+        </h4>
+        <div>
+          <label
+            class="block py-1 text-gray-500 cursor-pointer first:pt-0"
+            v-for="{name,id} in brand"
+            :key="id"
+          >
+            <input
+              class="mr-2 border rounded-sm border-model-gray-400 ring-0 hover:ring-0 checked:text-model-orange focus:ring-0"
+              type="checkbox"
+            />
+            <span class="text-sm text-black uppercase">{{name}}</span>
+          </label>
+        </div>
+      </section>
+    </div>
+    <div class="flex-1">
+      <div class="flex items-start justify-end mb-6">
+        <span class="text-sm leading-7 me-5">篩選</span>
+        <button
+          class="w-[78px] text-sm py-1 leading-5 text-white transition-all duration-200 ease-in-out rounded-md bg-model-orange me-2"
+        >
+          最新
+        </button>
+        <button
+          class="w-[78px] text-sm py-1 leading-5 transition-all duration-200 ease-in-out border rounded-md border-model-gray-400 me-2"
+        >
+          最熱銷
+        </button>
+        <select
+          class="text-sm leading-5 border border-model-gray-400 rounded-md w-[156px] bg-white py-1"
+        >
+          <option>最熱銷</option>
+        </select>
+      </div>
+      <div class="grid justify-center grid-cols-4 gap-y-4 place-items-center">
+        <a
+          v-for="product in products"
+          href="detail.html"
+          class="max-h-[360px] h-[360px] w-[220px] shadow-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105"
+        >
+          <div
+            class="max-h-[220px] h-[220px] w-[220px] max-w-[220px]: bg-cover bg-no-repeat bg-center"
+            :style="{'background-image': `url('${product.productImage}')`}"
+          ></div>
+          <div class="flex flex-col px-2">
+            <div class="text-sm line-clamp-2 h-[39px] my-2">
+              {{product.productName}}
+            </div>
+            <div class="text-base text-model-gray-300 h-[19px] my-2">
+              {{product.trade}}
+            </div>
+            <div class="text-xl text-model-orange-500 h-[24px] my-2 font-bold">
+              ${{product.productSellingPrice}}
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="py-8 text-center">
+        <nav class="">
+          <ul class="inline-flex space-x-2 text-sm">
+            <li>
+              <a
+                href="#"
+                class="flex items-center justify-center h-8 px-3 ml-0 text-sm font-medium leading-tight bg-white border rounded-sm border-model-gray-200 hover:text-white hover:bg-model-orange"
+                ><svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.83962 2.06646V1.03119C6.83962 0.941456 6.7365 0.891902 6.66685 0.946813L0.629351 5.66244C0.578054 5.70233 0.536546 5.75341 0.507994 5.81179C0.479442 5.87016 0.4646 5.93429 0.4646 5.99927C0.4646 6.06425 0.479442 6.12838 0.507994 6.18675C0.536546 6.24512 0.578054 6.29621 0.629351 6.3361L6.66685 11.0517C6.73783 11.1066 6.83962 11.0571 6.83962 10.9673V9.93208C6.83962 9.86646 6.80882 9.80351 6.75792 9.76333L1.93649 5.99994L6.75792 2.23521C6.80882 2.19503 6.83962 2.13208 6.83962 2.06646Z"
+                    fill="currentColor"
+                    fill-opacity="0.85"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center justify-center w-8 h-8 px-2 text-sm font-medium bg-white border rounded-sm border-model-gray-200 hover:text-white hover:bg-model-orange"
+                >1</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center justify-center w-8 h-8 px-2 text-sm font-medium text-white border rounded-sm bg-model-orange hover:text-white hover:bg-model-orange"
+                >2</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-current="page"
+                class="flex items-center justify-center w-8 h-8 px-2 text-sm font-medium bg-white border rounded-sm border-model-gray-200 hover:text-white hover:bg-model-orange"
+                >3</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center justify-center w-8 h-8 px-2 text-sm font-medium bg-white border rounded-sm border-model-gray-200 hover:text-white hover:bg-model-orange"
+                >4</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center justify-center w-8 h-8 px-2 text-sm font-medium bg-white border rounded-sm border-model-gray-200 hover:text-white hover:bg-model-orange"
+                >5</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center justify-center h-8 px-2 text-sm font-medium bg-white border rounded-sm border-model-gray-200 hover:text-white hover:bg-model-orange"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.39777 5.66281L3.36027 0.947189C3.34449 0.934768 3.32553 0.92705 3.30557 0.924919C3.2856 0.922788 3.26544 0.926332 3.2474 0.935143C3.22936 0.943955 3.21417 0.957676 3.20357 0.974732C3.19298 0.991787 3.18741 1.01149 3.1875 1.03156V2.06683C3.1875 2.13246 3.2183 2.1954 3.2692 2.23558L8.09063 6.00031L3.2692 9.76505C3.21697 9.80522 3.1875 9.86817 3.1875 9.9338V10.9691C3.1875 11.0588 3.29063 11.1083 3.36027 11.0534L9.39777 6.33781C9.44908 6.29779 9.4906 6.24658 9.51915 6.1881C9.5477 6.12962 9.56254 6.06539 9.56254 6.00031C9.56254 5.93523 9.5477 5.87101 9.51915 5.81253C9.4906 5.75404 9.44908 5.70284 9.39777 5.66281Z"
+                    fill="currentColor"
+                    fill-opacity="0.85"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="">
+  <div class="py-4 bg-model-gray-800 mt-7">
+    <div class="max-w-[1070px] mx-auto min-w-[960px]">
+      <div class="flex justify-between">
+        <div class="flex">
+          <div class="mr-14">
+            <a href="index.html"><img src="assets/images/logo.png" /></a>
+          </div>
+          <div class="text-sm leading-7 text-white mr-14">
+            <h5 class="font-bold">幫助</h5>
+            <ul>
+              <li><a href="#">問與答</a></li>
+              <li><a href="#">訊息公告</a></li>
+              <li><a href="#">聯絡客服</a></li>
+            </ul>
+          </div>
+          <div class="text-sm leading-7 text-white mr-14">
+            <h5 class="font-bold">政策</h5>
+            <ul>
+              <li><a href="#">大宗採購</a></li>
+              <li><a href="#">服務條款</a></li>
+              <li><a href="#">退貨政策</a></li>
+              <li><a href="#">會員制度</a></li>
+            </ul>
+          </div>
+          <div class="text-sm leading-7 text-white mr-14">
+            <h5 class="font-bold">關於我們</h5>
+            <ul>
+              <li><a href="#">媒體報導</a></li>
+              <li><a href="#">人才招募</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-white">
+          <h5 class="pb-2">追蹤我們</h5>
+          <ul class="flex">
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+              >
+                <img
+                  src="assets/images/social/fb.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+                />
+              </a>
+            </li>
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+              >
+                <img
+                  src="assets/images/social/tw.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+                />
+              </a>
+            </li>
+
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+                ><img
+                  src="assets/images/social/yt.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+              /></a>
+            </li>
+            <li class="pr-1">
+              <a
+                href="#"
+                class="relative block w-8 h-8 border rounded-full border-model-orange"
+                ><img
+                  src="assets/images/social/ig.svg"
+                  class="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-3 pb-1 text-sm text-center text-white bg-model-blue">
+    Copyright ©2023. All Rights Reserved.
+  </div>
+</footer>
+
+  </body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script type="module">
+  const { createApp, ref, onMounted } = Vue;
+  createApp({
+    setup() {
+      const brand = ref([
+        {
+          name: "BANDAI GUNPLA",
+          id: "BANDAI GUNPLA",
+        },
+        {
+          name: "BANDAI TAMASHII 魂",
+          id: "BANDAI TAMASHII 魂",
+        },
+        {
+          name: "GOOD SMILE 好微笑",
+          id: "GOOD SMILE 好微笑",
+        },
+        {
+          name: "MEGAHOUSE 百萬屋",
+          id: "MEGAHOUSE 百萬屋",
+        },
+        {
+          name: "KOTOBUKIYA 壽屋",
+          id: "KOTOBUKIYA 壽屋",
+        },
+        {
+          name: "NEXTEE",
+          id: "NEXTEE",
+        },
+        {
+          name: "THREEZERO",
+          id: "THREEZERO",
+        },
+        {
+          name: "LEGO",
+          id: "LEGO",
+        },
+        {
+          name: "超級系",
+          id: "超級系",
+        },
+        {
+          name: "人氣景品",
+          id: "人氣景品",
+        },
+        {
+          name: "熱門動漫作品",
+          id: "熱門動漫作品",
+        },
+      ]);
+      const products = ref([
+        {
+          productImage:
+            "assets/images/demo/card/MG 1_100 卡版 飛翼零式EW Ver.Ka.jpg",
+          productName: "MG 1_100 卡版 飛翼零式EW Ver.Ka",
+          productSellingPrice: "1320",
+          trade: "飛翼零式EW Ver.Ka",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/代理版 MH 1_24 VA 河森正治 閃電霹靂車 超級阿斯拉 幻影 Vision Asurada.jpg",
+          productName:
+            "代理版 MH 1_24 VA 河森正治 閃電霹靂車 超級阿斯拉 幻影 Vision Asurada",
+          productSellingPrice: "4780",
+          trade: "超級阿斯拉 幻影",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/BANDAI 組裝模型 Figure-rise Standard 黑暗大法師 增幅版 艾克佐迪亞.jpg",
+          productName:
+            "BANDAI 組裝模型 Figure-rise Standard 黑暗大法師 增幅版 艾克佐迪亞",
+          productSellingPrice: "1200",
+          trade: "黑暗大法師",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/FULL MECHANICS 1_100 機動戰士鋼彈SEED 禁斷鋼彈.jpg",
+          productName: "FULL MECHANICS 1_100 機動戰士鋼彈SEED 禁斷鋼彈",
+          productSellingPrice: "1620",
+          trade: "FM 禁斷",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/FM 1_100 風靈鋼彈 水星的魔女 FULL MECHANICS Aerial.jpg",
+          productName: "FM 1_100 風靈鋼彈 水星的魔女 FULL MECHANICS Aerial",
+          productSellingPrice: "880",
+          trade: "FM風靈",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/1_144 HGUC 028 鋼彈試作3號機 石斛蘭 GP03D 機動戰士鋼彈 星塵作戰回憶錄.jpg",
+          productName:
+            "1_144 HGUC 028 鋼彈試作3號機 石斛蘭 GP03D 機動戰士鋼彈 星塵作戰回憶錄",
+          productSellingPrice: "7700",
+          trade: "GP-03D",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/水星的魔女 26 HG 1_144 異靈鋼彈 Calibarn (原 新商品B).jpg",
+          productName: "水星的魔女 26 HG 1_144 異靈鋼彈 Calibarn (原 新商品B)",
+          productSellingPrice: "490",
+          trade: "HG異靈",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/HG 1_144 機動戰士鋼彈 水星的魔女 戰騎鋼彈.jpg",
+          productName: "HG 1_144 機動戰士鋼彈 水星的魔女 戰騎鋼彈",
+          productSellingPrice: "490",
+          trade: "HG戰騎",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/MG 1_100 獨角獸鋼彈 3號機 鳳凰 RX-0-3 機動戰士鋼彈UC 組裝模型.jpg",
+          productName:
+            "MG 1_100 獨角獸鋼彈 3號機 鳳凰 RX-0-3 機動戰士鋼彈UC 組裝模型",
+          productSellingPrice: "3280",
+          trade: "MG 獨角獸",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/BANDAI 1_100 MG 獵魔鋼彈 機動戰士鋼彈 鐵血的孤兒.jpg",
+          productName: "BANDAI 1_100 MG 獵魔鋼彈 機動戰士鋼彈 鐵血的孤兒",
+          productSellingPrice: "1210",
+          trade: "MG獵魔",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/MGEX 1_100 鋼彈Seed 攻擊自由鋼彈.jpg",
+          productName: "MGEX 1_100 鋼彈Seed 攻擊自由鋼彈",
+          productSellingPrice: "4200",
+          trade: "MGEX攻擊自由",
+        },
+        {
+          productImage: "assets/images/demo/card/MASTER GRADE SD 自由鋼彈.jpg",
+          productName: "MASTER GRADE SD 自由鋼彈",
+          productSellingPrice: "910",
+          trade: "MGSD自由",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/PG版 1_60 RX-78-2 GUNDAM UNLEASHED 鋼彈 初鋼.jpg",
+          productName: "PG版 1_60 RX-78-2 GUNDAM UNLEASHED 鋼彈 初鋼",
+          productSellingPrice: "6800",
+          trade: "PGU初鋼",
+        },
+        {
+          productImage:
+            "assets/images/demo/card/RG 1_144 新機動戰記鋼彈W 次代鋼彈.jpg",
+          productName: "RG 1_144 新機動戰記鋼彈W 次代鋼彈",
+          productSellingPrice: "1050",
+          trade: "RG次代",
+        },
+        {
+          productImage: "assets/images/demo/card/RG 新世紀福音戰士 初號機.jpg",
+          productName: "RG 新世紀福音戰士 初號機",
+          productSellingPrice: "1350",
+          trade: "RG初號機",
+        },
+        {
+          productImage: "assets/images/demo/card/RG 勇者王 我王凱牙 GaoGaiGar.jpg",
+          productName: "RG 勇者王 我王凱牙 GaoGaiGar",
+          productSellingPrice: "1400",
+          trade: "RG勇者王",
+        },
+      ]);
+
+      console.log(products.value.length);
+      onMounted(() => {
+        const swiper = new Swiper(".swiper", {
+          loop: true, //loop
+          slidesPerView: 2, //number of slides to show
+          centeredSlides: true, //put acctive slide center
+          spaceBetween: 1, //space between slides
+          autoplay: {
+            //autoplay
+            delay: 2000,
+          },
+          navigation: {
+            //navigation（arrows）
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      });
+      return {
+        brand,
+        products,
+      };
+    },
+  }).mount("#app");
+</script>
+
+</html>
